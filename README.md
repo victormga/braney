@@ -43,6 +43,41 @@ everything here too.
   <br clear="both">
 </p>
 
+## Install
+
+**macOS and Linux**
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/victormga/braney/main/scripts/install.sh | sh
+```
+
+**Windows** (PowerShell)
+
+```powershell
+irm https://raw.githubusercontent.com/victormga/braney/main/scripts/install.ps1 | iex
+```
+
+The [scripts](scripts) check the download against the release's checksums and install Braney
+into a folder you own, `~/.local/bin` or `%LOCALAPPDATA%\Programs\Braney`, so it can update
+itself there.
+
+**By hand**
+
+Download the archive for your system from
+[Releases](https://github.com/victormga/braney/releases/latest) and put `Braney` on your `PATH`,
+in a folder you own: Braney updates itself in place. On macOS, a browser download is quarantined;
+`xattr -d com.apple.quarantine Braney` clears it.
+
+## Quick start
+
+1. Start one of the [supported servers](#supported-backends), and load the model with a context
+   window of at least 32k tokens. It may run with less, but that isn't tested or recommended.
+2. Open a terminal in your project and run `Braney`.
+3. Pick the server and the model.
+4. Ask for something.
+
+`/help` shows the rest.
+
 ## What makes it different
 
 ### A sandbox instead of a shell
@@ -112,31 +147,6 @@ environment, no dependency tree pulled onto your machine: the whole program is t
 downloaded. Go keeps it fast and light, and it runs the same on Windows, macOS and Linux, on x64
 and ARM.
 
-## Install
-
-**macOS and Linux**
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/victormga/braney/main/scripts/install.sh | sh
-```
-
-**Windows** (PowerShell)
-
-```powershell
-irm https://raw.githubusercontent.com/victormga/braney/main/scripts/install.ps1 | iex
-```
-
-The [scripts](scripts) check the download against the release's checksums and install Braney
-into a folder you own, `~/.local/bin` or `%LOCALAPPDATA%\Programs\Braney`, so it can update
-itself there.
-
-**By hand**
-
-Download the archive for your system from
-[Releases](https://github.com/victormga/braney/releases/latest) and put `Braney` on your `PATH`,
-in a folder you own: Braney updates itself in place. On macOS, a browser download is quarantined;
-`xattr -d com.apple.quarantine Braney` clears it.
-
 ## Supported backends
 
 Braney runs on the model server you already use:
@@ -185,16 +195,6 @@ context window, the minimum Braney needs.
 Running one that isn't here, or one that misbehaves?
 [Tell us](https://github.com/victormga/braney/issues/new), with the model, its quantization and the
 backend.
-
-## Quick start
-
-1. Start one of the servers above, and load the model with a context window of at least 32k
-   tokens. It may run with less, but that isn't tested or recommended.
-2. Open a terminal in your project and run `Braney`.
-3. Pick the server and the model.
-4. Ask for something.
-
-`/help` shows the rest.
 
 ## What leaves your machine
 
