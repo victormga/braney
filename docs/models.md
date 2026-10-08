@@ -45,18 +45,32 @@ purpose. Prefer `frequency_penalty`: it grows with how often a word has appeared
 For models that reason before they answer, `/thinking` sets how long they may think. `shift+tab`
 steps through the levels.
 
-| Level | How long |
+| Level | Budget |
 | --- | --- |
 | `none` | no thinking |
-| `xlow` | shortest |
-| `low` | short |
-| `mid` | balanced |
-| `high` | long |
-| `xhigh` | longest |
+| `xlow` | 1k tokens |
+| `low` | 2k tokens |
+| `mid` | 4k tokens |
+| `high` | 8k tokens |
+| `xhigh` | 16k tokens |
 | `auto` | as long as the model likes (the default) |
 
-`/thinking budget 3k` sets an exact number of tokens instead. A level only ever cuts a thought
-short; it never makes a model think longer than it would on its own.
+`/thinking budget 3k` sets a number of your own instead.
+
+The budget works on every model that thinks, whatever the backend: Braney keeps it itself rather
+than leaving it to the server. Once a thought has used up its budget, Braney closes it, and the
+model goes on to answer. With `none`, the reply starts with a thought already closed, so the model
+answers straight away.
+
+- The budget is for each reply, not the whole turn: when the model calls a tool, it can think up to
+  the budget again before the next one.
+- It's counted from the length of the thought, so the cut lands close to the budget rather than
+  exactly on it.
+- A level only ever cuts a thought short; it never makes a model think longer than it would on its
+  own.
+- Some models don't accept a thought closed for them, and carry on reasoning in their answer
+  instead. If yours does, give it a higher level, or `auto`.
+- The setting belongs to the project, and stays when you switch models.
 
 ## Context window
 
