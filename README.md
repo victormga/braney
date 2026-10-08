@@ -149,7 +149,7 @@ and ARM.
 
 ## Supported backends
 
-Braney runs on the model server you already use:
+Braney runs on the model backend you already use:
 
 - [LM Studio](https://lmstudio.ai)
 - [llama.cpp](https://github.com/ggml-org/llama.cpp)
@@ -198,7 +198,7 @@ backend.
 
 ## What leaves your machine
 
-- Your prompts and code go to the model server you set, and nowhere else.
+- Your prompts and code go to the model backend you set, and nowhere else.
 - Web searches go to DuckDuckGo, only when the agent searches.
 - Anything else the agent's code reaches on the web asks you first, unless you're in yolo mode.
 - When you pick a model, Braney looks up its recommended settings on Hugging Face.
