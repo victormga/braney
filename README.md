@@ -1,7 +1,7 @@
 # BRANEY
 
 <p align="center">
-  <img src="assets/hero.gif" alt="The braney logo over falling green characters">
+  <img src="assets/hero.gif" alt="The Braney logo over falling green characters">
 </p>
 
 **The agent that takes local models seriously.**
@@ -10,13 +10,9 @@ Braney is a **batteries included** agent for your terminal, built to get real wo
 your own hardware. It can read your project, edit files, run code, search the web and check its
 own work, with everything it needs already in the box.
 
-<p align="center">
-  <img src="assets/example1.gif" alt="braney answering how to compare dates in JavaScript" width="400">&emsp;&emsp;<img src="assets/example2.gif" alt="braney reading a project's files to review its code" width="400">
-</p>
+## Why Braney
 
-## Why braney
-
-Small models aren't frontier models, and braney doesn't pretend they are. But they aren't toys
+Small models aren't frontier models, and Braney doesn't pretend they are. But they aren't toys
 either. A 4B model on a laptop can read code, reason about it and write it. What it can't do is
 survive a harness built for a model a hundred times its size.
 
@@ -25,21 +21,27 @@ tools and the full output of everything it runs, and a frontier model copes. A s
 command wrong, floods its context with a build log, calls a tool almost right, and the session
 falls apart. Braney was born from watching that happen.
 
-So braney goes the other way: **it makes the model more capable by making it more constrained.**
+So Braney goes the other way: **it makes the model more capable by making it more constrained.**
 
 - **Ambiguity is a bug.** Every tool is narrow and hard to call wrong. If a model can misuse one,
-  that's braney's bug to fix, not the model's.
+  that's Braney's bug to fix, not the model's.
 - **Context is scarce.** Big results never flood the conversation; the model pages through them
   when it needs to. Side tasks go to a separate worker that comes back with a paragraph. Long
   conversations compact themselves.
 - **Mistakes get caught.** When the model loops, stops halfway, or says it did something it
-  didn't, braney steps in and puts it back on track.
+  didn't, Braney steps in and puts it back on track.
 
 Small models don't need replacing. They need a push, and with one they do a lot.
 
 No magic, though. Braney raises what a model can do, but a better model still does better work.
 We validate it on [models from 2B up to 35B parameters](#tested-models), and the bigger ones get
 everything here too.
+
+<p>
+  <img src="assets/example1.gif" alt="Braney answering how to compare dates in JavaScript" width="400" align="left">
+  <img src="assets/example2.gif" alt="Braney reading a project's files to review its code" width="400" align="right">
+  <br clear="both">
+</p>
 
 ## What makes it different
 
@@ -118,9 +120,9 @@ preview what you build.
 ### Onboarding
 
 A new agent shouldn't mean starting over: rewriting your rules, hunting down your skills again,
-explaining the project from scratch. Whatever you built for another harness, braney takes in.
+explaining the project from scratch. Whatever you built for another harness, Braney takes in.
 
-**Skills from anywhere.** Point braney at a skill and it imports it, along with the files it
+**Skills from anywhere.** Point Braney at a skill and it imports it, along with the files it
 refers to: a `SKILL.md` on disk, a folder of them, a page on the web, or a GitHub file, folder or
 whole repository. Skills written for Claude Code, or any agent that uses the same format, work as
 they are. You can also hand the workshop a link and let it bring the skill in.
@@ -139,7 +141,7 @@ they are. You can also hand the workshop a link and let it bring the skill in.
 It asks before approving a command or importing a skill, and where two sources disagree, it asks
 you instead of guessing.
 
-**Another braney project.** One project's skills, hooks, commands and memories travel to the next
+**Another Braney project.** One project's skills, hooks, commands and memories travel to the next
 as a single file.
 
 **MCP servers.** The same `mcpServers` config every other client uses, pasted as it is.
@@ -166,8 +168,8 @@ hand, which is why each one goes through your hands first.
 
 ### One file per project
 
-Everything braney keeps about a project, its settings, conversations, memories, skills, hooks and
-instructions, lives in a single `.braney` file in the project folder. No markdown rules for an AI
+Everything Braney keeps about a project, its settings, conversations, memories, skills, hooks and
+instructions, lives in a single `.Braney` file in the project folder. No markdown rules for an AI
 scattered through your repo, mixed in with the code they're about.
 
 One file to keep out of git, and a project's setup can still be exported for your team.
@@ -184,25 +186,25 @@ and ARM.
 **macOS and Linux**
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/victormga/braney/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/victormga/Braney/main/scripts/install.sh | sh
 ```
 
 **Windows** (PowerShell)
 
 ```powershell
-irm https://raw.githubusercontent.com/victormga/braney/main/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/victormga/Braney/main/scripts/install.ps1 | iex
 ```
 
-The [scripts](scripts) check the download against the release's checksums and install braney
-into a folder you own, `~/.local/bin` or `%LOCALAPPDATA%\Programs\braney`, so it can update
+The [scripts](scripts) check the download against the release's checksums and install Braney
+into a folder you own, `~/.local/bin` or `%LOCALAPPDATA%\Programs\Braney`, so it can update
 itself there.
 
 **By hand**
 
 Download the archive for your system from
-[Releases](https://github.com/victormga/braney/releases/latest) and put `braney` on your `PATH`,
-in a folder you own: braney updates itself in place. On macOS, a browser download is quarantined;
-`xattr -d com.apple.quarantine braney` clears it.
+[Releases](https://github.com/victormga/Braney/releases/latest) and put `Braney` on your `PATH`,
+in a folder you own: Braney updates itself in place. On macOS, a browser download is quarantined;
+`xattr -d com.apple.quarantine Braney` clears it.
 
 ## Supported backends
 
@@ -218,15 +220,15 @@ Braney runs on the model server you already use:
 Any server with an API compatible with one of these works too: pick the backend it's compatible
 with. ninfer, for example, speaks llama.cpp's API, so choosing llama.cpp runs it.
 
-Need another one? [Open a feature request](https://github.com/victormga/braney/issues/new).
+Need another one? [Open a feature request](https://github.com/victormga/Braney/issues/new).
 
-**Remote servers are supported**. Point braney to it using `/configure agent.base_url <url>`
+**Remote servers are supported**. Point Braney to it using `/configure agent.base_url <url>`
 
 ## Tested models
 
-Every model below works cleanly in braney: no leaked thinking, no broken tool calls. How good the
+Every model below works cleanly in Braney: no leaked thinking, no broken tool calls. How good the
 work is still depends on the model, and grows with its size. All of them were tested with a 32k
-context window, the minimum braney needs.
+context window, the minimum Braney needs.
 
 | Model | Parameters | Quantization | Size |
 | --- | --- | --- | --- |
@@ -250,14 +252,14 @@ context window, the minimum braney needs.
 | `qwen3.6-35b` | 35B, 3B active | UD-Q4_K_M | 22.1 GB |
 
 Running one that isn't here, or one that misbehaves?
-[Tell us](https://github.com/victormga/braney/issues/new), with the model, its quantization and the
+[Tell us](https://github.com/victormga/Braney/issues/new), with the model, its quantization and the
 backend.
 
 ## Quick start
 
 1. Start one of the servers above, and load the model with a context window of at least 32k
    tokens. It may run with less, but that isn't tested or recommended.
-2. Open a terminal in your project and run `braney`.
+2. Open a terminal in your project and run `Braney`.
 3. Pick the server and the model.
 4. Ask for something.
 
@@ -268,8 +270,8 @@ backend.
 - Your prompts and code go to the model server you set, and nowhere else.
 - Web searches go to DuckDuckGo, only when the agent searches.
 - Anything else the agent's code reaches on the web asks you first, unless you're in yolo mode.
-- When you pick a model, braney looks up its recommended settings on Hugging Face.
-- At startup, braney asks GitHub whether there's a new version.
+- When you pick a model, Braney looks up its recommended settings on Hugging Face.
+- At startup, Braney asks GitHub whether there's a new version.
 - Shells, approved commands and MCP servers reach whatever you set them up to reach.
 
 Web search and the update check can both be turned off. No account, no telemetry.
@@ -286,9 +288,9 @@ Web search and the update check can both be turned off. No account, no telemetry
 - The workshop, where hooks, skills, standing instructions, approved commands and memories are
   built by talking.
 - Onboarding from what you already have: other agents' rules, the project's commands, skills
-  from a file or a URL, another braney project's setup.
+  from a file or a URL, another Braney project's setup.
 - A yolo mode you can trust, scoped to the project and still guarding what git can't restore.
-- One `.braney` binary file per project, instead of rules scattered through your repo.
+- One `.Braney` binary file per project, instead of rules scattered through your repo.
 - Web search, and a headless browser for the pages that need one.
 - MCP servers, from the same config every other client uses.
 - Sampling tuned to each model, found on its card and remembered per model.
@@ -302,25 +304,25 @@ How to use all of it is in the [docs](docs/README.md). Good places to start:
 - [Hooks](docs/hooks.md)
 - [Safety and permissions](docs/safety.md)
 
-## How braney is built
+## How Braney is built
 
 Braney is made with the help of AI, but it **isn't vibe-coded**. I've been programming for 15
-years, and every line of braney was reviewed, tested and approved by me before it went in.
+years, and every line of Braney was reviewed, tested and approved by me before it went in.
 
 Codex and Claude Code helped with the safety-heavy parts and the architectural decisions, where a
-mistake costs the most. Once the basics worked, braney was mostly built with braney, running
+mistake costs the most. Once the basics worked, Braney was mostly built with Braney, running
 Qwen3.8-27B locally.
 
 ## Feedback
 
 Braney gets better from real use on real hardware, so tell us what you run into.
 
-- **Found a bug?** [Report it](https://github.com/victormga/braney/issues/new), with the model,
+- **Found a bug?** [Report it](https://github.com/victormga/Braney/issues/new), with the model,
   the backend and your OS. With local models, the same request can go differently from one model
   to the next, and those three are what let us reproduce it.
 - **A model keeps getting something wrong?** That's a bug too. If a model can misuse a tool,
   the tool is what should change.
-- **Missing something?** [Ask for it](https://github.com/victormga/braney/issues/new): a backend,
+- **Missing something?** [Ask for it](https://github.com/victormga/Braney/issues/new): a backend,
   a tool, a nudge for a mistake your model keeps making.
 
 Every issue here gets read.
