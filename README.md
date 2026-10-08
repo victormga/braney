@@ -169,7 +169,7 @@ hand, which is why each one goes through your hands first.
 ### One file per project
 
 Everything Braney keeps about a project, its settings, conversations, memories, skills, hooks and
-instructions, lives in a single `.Braney` file in the project folder. No markdown rules for an AI
+instructions, lives in a single `.braney` file in the project folder. No markdown rules for an AI
 scattered through your repo, mixed in with the code they're about.
 
 One file to keep out of git, and a project's setup can still be exported for your team.
@@ -290,7 +290,7 @@ Web search and the update check can both be turned off. No account, no telemetry
 - Onboarding from what you already have: other agents' rules, the project's commands, skills
   from a file or a URL, another Braney project's setup.
 - A yolo mode you can trust, scoped to the project and still guarding what git can't restore.
-- One `.Braney` binary file per project, instead of rules scattered through your repo.
+- One `.braney` binary file per project, instead of rules scattered through your repo.
 - Web search, and a headless browser for the pages that need one.
 - MCP servers, from the same config every other client uses.
 - Sampling tuned to each model, found on its card and remembered per model.
