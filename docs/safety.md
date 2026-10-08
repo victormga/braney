@@ -67,11 +67,11 @@ covers only that one call.
 
 ## What leaves your machine
 
-- Your prompts and code go to the model server you set, and nowhere else.
+- Your prompts and code go to the model backend you set, and nowhere else.
 - Web searches go to DuckDuckGo, only when the agent searches.
 - Anything else the agent's code reaches on the web asks you first, unless you're in yolo mode.
-- When you pick a model, braney looks up its recommended settings on Hugging Face.
-- At startup, braney asks GitHub whether there's a new version. `/update off` stops that.
+- When you pick a model, Braney looks up its recommended settings on Hugging Face.
+- At startup, Braney asks GitHub whether there's a new version. `/update off` stops that.
 - Shells, approved commands and MCP servers reach whatever you set them up to reach.
 
 No account, no telemetry.

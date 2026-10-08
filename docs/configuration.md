@@ -14,7 +14,7 @@ token counts as `32k`.
 
 | Setting | Default | What it sets |
 | --- | --- | --- |
-| `agent.base_url` | the server's usual address | where the model server is, its root without `/v1` |
+| `agent.base_url` | the server's usual address | where the model backend is, its root without `/v1` |
 | `agent.api_key` | none | the key the server needs, if any |
 | `agent.tool_result_limit` | 4 KB | how large a tool result can be before it's kept aside for the model to page through |
 | `model.context_size` | what the server reports | the model's context window, for a server that reports it wrong |
@@ -25,10 +25,10 @@ token counts as `32k`.
 | `sandbox.disk_limit` | 10 GB | how much a sandboxed script may write |
 | `mcp.timeout` | 60 seconds | how long an MCP server has to answer |
 | `browser.path` | an installed browser | the browser the agent uses for pages that need one |
-| `alerts.sound` | `default` | the sound braney plays when it needs you |
+| `alerts.sound` | `default` | the sound Braney plays when it needs you |
 | `alerts.volume` | 0.5 | how loud, from 0 to 1 |
 
-When no browser is installed and the agent needs one, braney offers to download one, and asks
+When no browser is installed and the agent needs one, Braney offers to download one, and asks
 first.
 
 ### Sounds
@@ -62,6 +62,6 @@ A few things have commands of their own:
 
 ## Themes
 
-`/theme` changes braney's colors: `green` (the default), `amber`, `violet`, `amethyst`,
+`/theme` changes Braney's colors: `green` (the default), `amber`, `violet`, `amethyst`,
 `lavender`, `orchid`, `indigo`, `teal` and `steel` for terminals with a dark background, and
 `light` for ones with a light background.

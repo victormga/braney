@@ -18,7 +18,7 @@ when it spots one, it tells the model what went wrong so it can recover.
 | Tool calls declined repeatedly | keeps asking for what you declined |
 | False claim on work done | says it changed files it never touched |
 
-`ctrl+o` opens the details of the last run, including what braney caught.
+`ctrl+o` opens the details of the last run, including what Braney caught.
 
 ## Turning them off
 

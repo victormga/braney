@@ -11,7 +11,7 @@ works out what to build and builds it with you.
 | `F2` | opens the workshop, and leaves it (`fn+F2` on many laptops) |
 | `/workshop` | starts a fresh workshop, even from inside one |
 | `/workshop <request>` | starts one with your request already in |
-| `/help <question>` | asks the workshop a question about braney |
+| `/help <question>` | asks the workshop a question about Braney |
 | `ctrl+c`, `/exit` | leave the workshop |
 
 Leaving takes you back to your conversation, where you left it. What you said in the workshop
@@ -55,8 +55,8 @@ job. It writes only what it builds, like the script behind an approved command.
 Every permission is asked inside the workshop, even with yolo on, and an answer covers only that
 one call. Hooks don't run inside it, so to see a new hook fire, leave the workshop and try it.
 
-## Asking about braney
+## Asking about Braney
 
-The workshop knows braney. Ask it which command does what, how to set something up, or where a
+The workshop knows Braney. Ask it which command does what, how to set something up, or where a
 setting lives. Settings, the model, MCP servers and which tools the agent may use are changed with
 slash commands, and the workshop tells you which one.

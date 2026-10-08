@@ -43,5 +43,5 @@ Skills written for other agents in the `SKILL.md` format work as they are. `/ski
 - a web page that links to them
 - a GitHub file, folder or whole repository, like `https://github.com/anthropics/skills`
 
-Each skill comes with the files it refers to, and braney asks before importing. You can also hand
+Each skill comes with the files it refers to, and Braney asks before importing. You can also hand
 the workshop a link and let it bring the skill in.

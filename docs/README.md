@@ -1,11 +1,11 @@
-# braney documentation
+# Braney documentation
 
 **Start here**
 
-- [Getting started](getting-started.md): install, connect to your model server, first run, updates.
+- [Getting started](getting-started.md): install, connect to your model backend, first run, updates.
 - [Models](models.md): picking a model, sampling, thinking, the context window.
 
-**Working with braney**
+**Working with Braney**
 
 - [Conversations](conversations.md): writing prompts, history, rolling back, the context window.
 - [Safety and permissions](safety.md): what the agent may do, yolo, the sandbox, the shell.

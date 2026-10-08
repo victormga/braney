@@ -6,7 +6,7 @@
 model's context window and whether it can see images from the server, and each project remembers
 its own model.
 
-To connect to a server, see [Getting started](getting-started.md#connect-to-a-model-server).
+To connect to a server, see [Getting started](getting-started.md#connect-to-a-model-backend).
 
 ## Sampling
 
@@ -15,13 +15,13 @@ model itself. Publishers tune their models for specific values, often one set fo
 another for plain answers, and the wrong ones can leave a model repeating itself or drifting off
 task.
 
-The first time you pick a model, braney looks it up on Hugging Face, reads the recommendation from
+The first time you pick a model, Braney looks it up on Hugging Face, reads the recommendation from
 its model card, and offers it. When a card has several sets, pick the one that fits how you use the
-model. When a quantized copy's card doesn't carry a recommendation, braney follows it back to the
+model. When a quantized copy's card doesn't carry a recommendation, Braney follows it back to the
 original model, and failing that, offers the defaults the model ships with.
 
 What you pick is saved for that model, and applied every time you pick it again. Until you choose,
-braney sends no sampling settings at all, and your server's own settings stand.
+Braney sends no sampling settings at all, and your server's own settings stand.
 
 | Command | What it does |
 | --- | --- |

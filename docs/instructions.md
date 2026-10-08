@@ -5,12 +5,12 @@ or "never edit generated files". They're part of the system prompt, so keep each
 
 ## Your part of the prompt
 
-Braney's system prompt has two halves. The first describes how braney itself works, and is what
+Braney's system prompt has two halves. The first describes how Braney itself works, and is what
 makes a small model usable here; it isn't editable. The second is yours: it ships with guidance you
 might reasonably want to overrule, like how to verify a change, or how to handle comments, tests
 and dependencies.
 
-Until you save an edit, you follow braney's default as it improves with each release. Your first
+Until you save an edit, you follow Braney's default as it improves with each release. Your first
 save makes the text yours; `/prompt reset` hands it back.
 
 | Command | What it does |
@@ -18,7 +18,7 @@ save makes the text yours; `/prompt reset` hands it back.
 | `/prompt open` | opens your instructions in the editor |
 | `/prompt history` | lists your saved revisions |
 | `/prompt restore <revision>` | brings one back |
-| `/prompt reset` | goes back to braney's default |
+| `/prompt reset` | goes back to Braney's default |
 
 The last 20 revisions are kept.
 

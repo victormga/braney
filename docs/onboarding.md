@@ -1,11 +1,11 @@
 # Onboarding
 
 A new agent shouldn't mean starting over. Braney takes in what you already have: the rules you wrote
-for other agents, your project's commands, your skills, and other braney projects' setups.
+for other agents, your project's commands, your skills, and other Braney projects' setups.
 
 ## Setting up from your project
 
-`/onboard` reads the project and sets braney up from it:
+`/onboard` reads the project and sets Braney up from it:
 
 - **Rules written for other agents**, in `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`,
   `.cursor/rules/`, `.windsurfrules` and `.github/copilot-instructions.md`, and the `AGENTS.md`
@@ -30,9 +30,9 @@ repository. See [Skills](skills.md#importing-skills).
 
 `/project export` writes the project's instructions, memories, skills, hooks, approved commands and
 MCP servers to one file, `.brn` in the project folder by default. Commit it, and your team brings
-it into their own braney with `/project import`.
+it into their own Braney with `/project import`.
 
-Both take an optional path. Before an import, braney shows what's in the file:
+Both take an optional path. Before an import, Braney shows what's in the file:
 
 - Hooks arrive turned off. Read them with `/hooks open` before turning them on.
 - MCP servers are listed with what they run.

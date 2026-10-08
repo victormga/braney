@@ -24,18 +24,18 @@ server's README works as it stands.
 ```
 
 `${VAR}` is read from your environment when the server starts, so a token stays where you keep it
-rather than in braney. A literal value works too.
+rather than in Braney. A literal value works too.
 
 A remote server takes a `url` instead of a `command`, with `headers` for its authentication. OAuth
 isn't supported yet.
 
-One config can add several servers. Fields braney doesn't use, like another client's settings, are
+One config can add several servers. Fields Braney doesn't use, like another client's settings, are
 kept as you wrote them.
 
 ## Using its tools
 
 Every tool a server offers becomes one of the agent's tools, named `mcp_<server>__<tool>`. They're
-all on when you add the server, and braney tells you how much of the context window their
+all on when you add the server, and Braney tells you how much of the context window their
 descriptions take. `/tools` turns any of them off, which keeps a small context window from filling
 up with tools you don't need.
 
@@ -55,7 +55,7 @@ A server's name is a label and the prefix of its tools. Renaming it in the edito
 server, and two servers can't share a name.
 
 Braney doesn't contact a server on its own. If one couldn't be reached when you added it, it has
-no tools until you refresh it, and braney says so at startup, naming the missing variable when
+no tools until you refresh it, and Braney says so at startup, naming the missing variable when
 that's the reason.
 
 `mcp.timeout` sets how long a server has to answer; see [Configuration](configuration.md).

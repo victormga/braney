@@ -48,7 +48,7 @@ Type `/` in the input box and the matching commands appear as you type. `/help` 
 | `/forget <description>` | asks the agent to forget something |
 | `/command` | approved commands |
 | `/mcp` | MCP servers |
-| `/onboard` | sets braney up from the project |
+| `/onboard` | sets Braney up from the project |
 | `/project export`, `/project import` | shares a project's setup |
 
 **Braney**
@@ -84,7 +84,7 @@ Type `/` in the input box and the matching commands appear as you type. `/help` 
 
 ## The editor
 
-Hooks, skills, memories, instructions, approved commands and MCP configs open in braney's editor.
+Hooks, skills, memories, instructions, approved commands and MCP configs open in Braney's editor.
 
 | Key | What it does |
 | --- | --- |
@@ -97,4 +97,4 @@ Hooks, skills, memories, instructions, approved commands and MCP configs open in
 
 ## Command line
 
-`braney --licenses` prints braney's license, then those of the open-source software it is built with.
+`braney --licenses` prints Braney's license, then those of the open-source software it is built with.

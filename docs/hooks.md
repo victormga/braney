@@ -41,7 +41,7 @@ what has to last in `localStorage`, which works as it does in a browser: strings
 
 ## Events that watch
 
-These handlers read the subject; they can't change what braney does.
+These handlers read the subject; they can't change what Braney does.
 
 | Event | When | Subject |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ These handlers read the subject; they can't change what braney does.
 | Event | When | Subject |
 | --- | --- | --- |
 | `tool:before` | a tool call is about to run | `tool`, `args`, `isSubAgent`, and `refuse(reason)` |
-| `permission` | braney is about to ask you to allow something | `key`, `verb`, `subject`, `details`, `ephemeral`, and `allow()` and `deny(reason)` |
+| `permission` | Braney is about to ask you to allow something | `key`, `verb`, `subject`, `details`, `ephemeral`, and `allow()` and `deny(reason)` |
 
 - A refused call never runs, and the agent is told your reason.
 - A `permission` handler runs before any answer you saved, so it can allow what you once declined,
@@ -75,7 +75,7 @@ These handlers read the subject; they can't change what braney does.
   handler denies, a later `allow()` has no effect.
 - `ephemeral` is true when an answer would cover only this one call, as for a file git ignores.
 
-## The braney API
+## The Braney API
 
 These act on the conversation the event is about, a subagent's included. At a script's top level,
 they act on your conversation.
@@ -100,7 +100,7 @@ Unlike the agent, a hook runs as you, with your permissions, on your machine.
   asking**. `require("name@1.2.3")` pins a version.
 - `child_process` runs commands synchronously only: `execSync`, `execFileSync` and `spawnSync`.
   Braney waits while a command runs, so keep them short.
-- Relative paths start from the folder braney was started in.
+- Relative paths start from the folder Braney was started in.
 - Commands differ between systems; `process.platform` is `"win32"`, `"darwin"` or `"linux"`.
 
 ## Limits

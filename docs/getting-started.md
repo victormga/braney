@@ -15,7 +15,7 @@ irm https://raw.githubusercontent.com/victormga/braney/main/scripts/install.ps1 
 ```
 
 The script downloads the latest release for your system, checks it against the release's
-checksums, and installs braney into a folder you own:
+checksums, and installs Braney into a folder you own:
 
 | System | Folder |
 | --- | --- |
@@ -29,7 +29,7 @@ it if it isn't there yet.
 
 Download the archive for your system from
 [Releases](https://github.com/victormga/braney/releases/latest) and put `braney` (`braney.exe` on
-Windows) in a folder on your `PATH`. Pick a folder you own: braney updates itself in place, so a
+Windows) in a folder on your `PATH`. Pick a folder you own: Braney updates itself in place, so a
 folder that needs `sudo` or an administrator, like `/usr/local/bin` or `Program Files`, keeps it
 from updating.
 
@@ -39,9 +39,9 @@ On macOS, a file downloaded with a browser is quarantined. Clear it with:
 xattr -d com.apple.quarantine braney
 ```
 
-## Connect to a model server
+## Connect to a model backend
 
-Braney works with the model server you already run. Start one with a model available:
+Braney works with the model backend you already run. Start one with a model available:
 
 | Server | Looked for at |
 | --- | --- |
@@ -54,9 +54,9 @@ Braney works with the model server you already run. Start one with a model avail
 
 A server with an API compatible with one of these works too: pick the one it's compatible with.
 
-**Remote servers are supported**. Point braney to it using `/configure agent.base_url <url>`
+**Remote servers are supported**. Point Braney to it using `/configure agent.base_url <url>`
 
-**Give the model at least 32k tokens of context.** That's the minimum braney is tested with; it may
+**Give the model at least 32k tokens of context.** That's the minimum Braney is tested with; it may
 run with less, but that isn't tested or recommended. Many servers load a model with a smaller
 window than it supports, so set it when you load the model.
 
@@ -69,7 +69,7 @@ braney
 ```
 
 If your server runs somewhere other than its usual address, on another port or another machine,
-point braney at it first. Give the server's root, without `/v1`:
+point Braney at it first. Give the server's root, without `/v1`:
 
 ```
 /configure agent.base_url http://192.168.1.20:8080
@@ -77,7 +77,7 @@ point braney at it first. Give the server's root, without `/v1`:
 
 If it needs a key, set that too with `/configure agent.api_key <key>`.
 
-Then pick the server and the model with `/model`. The first time you pick a model, braney offers
+Then pick the server and the model with `/model`. The first time you pick a model, Braney offers
 the sampling settings its publisher recommends; see [Models](models.md#sampling).
 
 Now type what you want done, and press `enter`.
@@ -97,7 +97,7 @@ Deleting `.braney` starts the project over from scratch.
 ## Coming from another agent
 
 `/onboard` reads what your project already has, like `AGENTS.md` or `CLAUDE.md`, its test and
-build commands, and its skills, and sets braney up from it. See [Onboarding](onboarding.md).
+build commands, and its skills, and sets Braney up from it. See [Onboarding](onboarding.md).
 
 ## Updates
 
@@ -111,11 +111,11 @@ changes that:
 | `/update off` | stops checking at startup |
 | `/update check` | checks right now |
 
-While an update downloads, braney shows its progress; `esc` or `ctrl+c` cancels it and carries on
-with the version you have. Once it's installed, braney restarts into the new version and reopens
+While an update downloads, Braney shows its progress; `esc` or `ctrl+c` cancels it and carries on
+with the version you have. Once it's installed, Braney restarts into the new version and reopens
 your conversation.
 
 ## Uninstall
 
-Delete braney from the folder it was installed in, and the `.braney` file from your projects. On
+Delete Braney from the folder it was installed in, and the `.braney` file from your projects. On
 Windows, also remove `%LOCALAPPDATA%\Programs\braney` from your user `PATH`.

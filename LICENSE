@@ -2,42 +2,41 @@ BRANEY LICENSE
 
 Copyright (c) 2026 Victor Sabiar (https://github.com/victormga)
 
-This license covers braney v1.0.0. Everything it does not expressly grant
+This license covers Braney v1.0.1. Everything it does not expressly grant
 stays with the author.
 
 1. What you may do
 
-You may download braney and use it for any purpose, personal or commercial,
+You may download Braney and use it for any purpose, personal or commercial,
 free of charge. You and your organization may install it on any number of
 devices you control, and copies may move freely within your organization.
 
 This permission is worldwide and cannot be transferred: you may not grant it to
 anyone else.
 
-2. Where braney comes from
+2. Where Braney comes from
 
 Braney's official source is https://github.com/victormga/braney. Every copy you
 use must come from there, directly or through your organization: from its
-releases, its install scripts, or braney's own updater.
+releases, its install scripts, or Braney's own updater.
 
 3. What you may not do
 
-- Give, sell, rent, publish or otherwise distribute braney to anyone outside
+- Give, sell, rent, publish or otherwise distribute Braney to anyone outside
   your organization. Point them to the official source instead.
-- Modify, decompile, disassemble or reverse engineer braney, except where the
+- Modify, decompile, disassemble or reverse engineer Braney, except where the
   law expressly allows it despite this restriction.
-- Remove or change its copyright or license notices, or present braney as your
+- Remove or change its copyright or license notices, or present Braney as your
   own work or as coming from anywhere other than its official source.
 
-4. Extending braney is using it
+4. Extending Braney
 
-Braney is made to be extended. Hooks, skills, commands, instructions, memories,
-MCP servers, settings, JavaScript run in its sandbox, and the other ways braney
-is built to be configured or extended are braney used as intended, not
-modifications of it.
+You may extend Braney in the ways it is built to be extended, like hooks,
+skills, MCP servers and scripts run in its sandbox. Modifying Braney itself,
+like patching it, hacking into it or making mods of it, is not allowed.
 
-What you make with them is yours. So is your own work: your code, your files,
-your conversations, and what models produce through braney. The author claims
+What you make with Braney is yours. So is your own work: your code, your files,
+your conversations, and what models produce through Braney. The author claims
 no rights over any of it.
 
 5. Other people's software and services
@@ -46,7 +45,7 @@ Braney is built with open-source software that belongs to its authors and is
 licensed under their own terms. "braney --licenses" lists those components and
 their licenses. This license grants no rights to them and takes none away.
 
-Braney also works with services the author does not control: the model server
+Braney also works with services the author does not control: the model backend
 you choose, MCP servers, DuckDuckGo, Hugging Face, GitHub, and the websites the
 agent visits. Their own terms apply to them. The author is not responsible for
 them, nor for what any model says or does.
@@ -69,7 +68,7 @@ do, and for checking its work.
 
 8. Limitation of liability
 
-The author is not liable for any loss or damage arising from braney or its use,
+The author is not liable for any loss or damage arising from Braney or its use,
 direct or indirect, including lost data, lost profits, damaged systems, and
 anything a model or an extension did, even if told such damage was possible.
 
@@ -83,7 +82,7 @@ hand or through automatic updates, comes under the license released with it.
 10. Termination
 
 This license ends automatically if you break its terms. You must then stop
-using braney and delete your copies.
+using Braney and delete your copies.
 
 11. Feedback
 

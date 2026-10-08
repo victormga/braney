@@ -37,7 +37,7 @@ Conversations are saved as they go, in the project's `.braney` file.
 | --- | --- |
 | `/find`, `ctrl+f` | searches the transcript |
 | `/clear`, `ctrl+l` | clears the screen, and keeps the conversation |
-| `ctrl+o` | opens the details of the last run: what the agent did, and what braney caught |
+| `ctrl+o` | opens the details of the last run: what the agent did, and what Braney caught |
 
 ## The context window
 
@@ -49,6 +49,6 @@ lean on its own:
   be before that happens.
 - Side tasks that would fill the conversation with noise, like digging through a large codebase
   for one answer, go to a subagent that reports back in a paragraph.
-- When the window fills up, braney summarizes the conversation to make room, and carries on.
+- When the window fills up, Braney summarizes the conversation to make room, and carries on.
 
 `/context` shows what's filling the window, and `/compact` summarizes the conversation right away.
