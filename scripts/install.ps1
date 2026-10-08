@@ -10,11 +10,10 @@
 	$repo = "victormga/braney"
 	$dir = "$env:LOCALAPPDATA\Programs\braney"
 
-	# The OS's, not the process's: an x64 PowerShell on ARM reports x64.
-	$os = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
+	$os = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment").PROCESSOR_ARCHITECTURE
 	$arch = switch ($os) {
-		"X64" { "amd64" }
-		"Arm64" { "arm64" }
+		"AMD64" { "amd64" }
+		"ARM64" { "arm64" }
 		default { throw "braney: no build for $os, see https://github.com/$repo/releases" }
 	}
 
