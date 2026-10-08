@@ -186,13 +186,13 @@ and ARM.
 **macOS and Linux**
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/victormga/Braney/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/victormga/braney/main/scripts/install.sh | sh
 ```
 
 **Windows** (PowerShell)
 
 ```powershell
-irm https://raw.githubusercontent.com/victormga/Braney/main/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/victormga/braney/main/scripts/install.ps1 | iex
 ```
 
 The [scripts](scripts) check the download against the release's checksums and install Braney
@@ -202,7 +202,7 @@ itself there.
 **By hand**
 
 Download the archive for your system from
-[Releases](https://github.com/victormga/Braney/releases/latest) and put `Braney` on your `PATH`,
+[Releases](https://github.com/victormga/braney/releases/latest) and put `Braney` on your `PATH`,
 in a folder you own: Braney updates itself in place. On macOS, a browser download is quarantined;
 `xattr -d com.apple.quarantine Braney` clears it.
 
@@ -220,7 +220,7 @@ Braney runs on the model server you already use:
 Any server with an API compatible with one of these works too: pick the backend it's compatible
 with. ninfer, for example, speaks llama.cpp's API, so choosing llama.cpp runs it.
 
-Need another one? [Open a feature request](https://github.com/victormga/Braney/issues/new).
+Need another one? [Open a feature request](https://github.com/victormga/braney/issues/new).
 
 **Remote servers are supported**. Point Braney to it using `/configure agent.base_url <url>`
 
@@ -252,7 +252,7 @@ context window, the minimum Braney needs.
 | `qwen3.6-35b` | 35B, 3B active | UD-Q4_K_M | 22.1 GB |
 
 Running one that isn't here, or one that misbehaves?
-[Tell us](https://github.com/victormga/Braney/issues/new), with the model, its quantization and the
+[Tell us](https://github.com/victormga/braney/issues/new), with the model, its quantization and the
 backend.
 
 ## Quick start
@@ -317,12 +317,12 @@ Qwen3.8-27B locally.
 
 Braney gets better from real use on real hardware, so tell us what you run into.
 
-- **Found a bug?** [Report it](https://github.com/victormga/Braney/issues/new), with the model,
+- **Found a bug?** [Report it](https://github.com/victormga/braney/issues/new), with the model,
   the backend and your OS. With local models, the same request can go differently from one model
   to the next, and those three are what let us reproduce it.
 - **A model keeps getting something wrong?** That's a bug too. If a model can misuse a tool,
   the tool is what should change.
-- **Missing something?** [Ask for it](https://github.com/victormga/Braney/issues/new): a backend,
+- **Missing something?** [Ask for it](https://github.com/victormga/braney/issues/new): a backend,
   a tool, a nudge for a mistake your model keeps making.
 
 Every issue here gets read.
