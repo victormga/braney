@@ -1,8 +1,8 @@
+# BRANEY
+
 <p align="center">
   <img src="assets/hero.gif" alt="The braney logo over falling green characters">
 </p>
-
-# BRANEY
 
 **The agent that takes local models seriously.**
 
