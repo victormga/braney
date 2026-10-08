@@ -60,56 +60,23 @@ APIs and the npm packages it asks for, installed once you approve them. That tra
   language there is. A small model writes a loop over files far more reliably than it chains
   `find | xargs | sed`, and it handles real logic in a way a one-line command never will.
 
-A script either lands or it doesn't: nothing it writes reaches your files until it finishes, so
-one that fails halfway leaves your project as it was. And it behaves the same on Windows, macOS
-and Linux.
-
-When the agent does need a real program, like your test runner, you can approve that one command
-as a tool, or hand it a full shell.
-
 ### Safe to leave alone
 
-Braney asks before the agent changes anything, and yolo mode stops asking. Because the agent's
-files and code stay inside the project folder, yolo is safe whenever the project is in git or in
-a folder you don't mind changing: the model can't reach the rest of your computer, let alone
-break it. Files git can't restore, the ones it ignores, are still asked about every time.
-
-The exceptions are the ones you plug in yourself. A shell, approved commands and MCP servers
-reach outside the project, and yolo runs those without asking too.
+Braney asks before the agent changes anything, and since the agent can't reach outside the
+project folder, yolo mode can stop asking whenever the project is in git. Only what you plug in
+yourself, a shell, approved commands or MCP servers, reaches further.
 
 ### Each model at its best
 
-How a model picks its next word matters almost as much as which model it is. Publishers tune
-their models for specific sampling settings, temperature, top-p, top-k and the rest, often one set
-for thinking and another for plain answers, and some warn outright that the wrong ones end in
-endless repetition. Small models have the least room to spare. Yet those numbers sit in a model
-card few people read, quantized copies often leave them out, and a server that doesn't know them
-runs the model on generic defaults.
-
-Braney finds them for you. When you pick a model, it looks the model up on Hugging Face and reads
-the recommendation from its card. When a quantized copy doesn't carry one, it follows the copy
-back to the original model, and failing that, takes the defaults the model ships with. It offers
-every set the publisher wrote, and remembers your choice for that model. Nothing is overridden
-until you choose: until then, your server's own settings stand.
+Publishers tune their models for specific sampling settings, and the wrong ones can send a small
+model into endless repetition. Braney looks them up on Hugging Face when you pick a model and
+offers them, leaving your server's own settings alone until you choose.
 
 ### Nudges
 
-Small models fail in familiar ways. They repeat themselves until the context runs out, call the
-same tool over and over, second-guess every step, stop halfway through with "next, I'll…", or
-report work as done that never happened. Most harnesses let that play out, and you find out
-later. The false "done" is the worst of them, because you believe it.
-
-Braney watches for these while the model works, and steps in when it spots one: it tells the model
-what went wrong, so it recovers instead of wasting the turn. It catches:
-
-- repetition, in its thinking, its answer or its tool calls;
-- indecision, when reasoning turns into a spiral of second thoughts;
-- stopping before the work is done;
-- claiming to have changed files it never touched;
-- tool calls that keep failing or come out malformed;
-- and more.
-
-Each nudge can be turned off, for a model that doesn't need it.
+Small models fail in familiar ways: they repeat themselves, stop halfway, or report work as done
+that never happened. Braney catches these as the model works and tells it what went wrong, so it
+recovers instead of wasting the turn.
 
 ### Batteries included
 
@@ -119,52 +86,16 @@ preview what you build.
 
 ### Onboarding
 
-A new agent shouldn't mean starting over: rewriting your rules, hunting down your skills again,
-explaining the project from scratch. Whatever you built for another harness, Braney takes in.
-
-**Skills from anywhere.** Point Braney at a skill and it imports it, along with the files it
-refers to: a `SKILL.md` on disk, a folder of them, a page on the web, or a GitHub file, folder or
-whole repository. Skills written for Claude Code, or any agent that uses the same format, work as
-they are. You can also hand the workshop a link and let it bring the skill in.
-
-**Your project, read for you.** Braney can set itself up from what the project already has:
-
-- Rules written for other agents, in `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, Cursor, Windsurf and
-  Copilot files. Rules become standing instructions, facts about the project become memories, and
-  whatever was about the other agent itself stays behind.
-- The tests, linters, type checks, formatters and builds the project declares, in `package.json`,
-  a `Makefile`, `pyproject.toml`, `Cargo.toml`, `go.mod` and the like. They become approved
-  commands, so the agent can safely check its own work from the first prompt.
-- The skills already in the project's `.claude/skills` or `.agents/skills` folder.
-- A few memories on what the project is built with, where it starts and where its tests live.
-
-It asks before approving a command or importing a skill, and where two sources disagree, it asks
-you instead of guessing.
-
-**Another Braney project.** One project's skills, hooks, commands and memories travel to the next
-as a single file.
-
-**MCP servers.** The same `mcpServers` config every other client uses, pasted as it is.
+Whatever you built for another agent, Braney takes in: rules from `AGENTS.md`, `CLAUDE.md` and
+the like, skills from disk, the web or GitHub, the project's own test and lint commands, and your
+`mcpServers` config as it is. It asks before approving a command or importing a skill.
 
 ### The workshop
 
-Customizing an agent usually means learning its formats: where rules go, how a plugin is written,
-which hook fires when. Braney's workshop does that part for you. It's a separate conversation
-about the agent itself: you say what you want the agent to do differently, and the workshop works
-out which piece does it and builds it with you.
-
-| You say | You get |
-| --- | --- |
-| "Run the linter every time the agent edits a file" | a **hook**, JavaScript that runs when something happens |
-| "Never let it touch `vendor/`" | a hook that refuses the call: a guarantee, not a request |
-| "This is how we cut a release: …" | a **skill**, steps the agent follows when that task comes up |
-| "Always use pnpm, never npm" | a **standing instruction**, part of every conversation |
-| "Let the agent run our tests" | an **approved command**, a tool that runs exactly that and nothing else |
-| "We deploy with fly.io, from main only" | a **memory**, recalled when it's relevant |
-
-Nothing it builds is saved until you've read it and said yes, and it leaves your code alone.
-Hooks are the one piece that reaches past the sandbox: they run as you, with your own programs at
-hand, which is why each one goes through your hands first.
+Customizing an agent shouldn't mean learning its formats. In the workshop, a separate
+conversation about the agent itself, you say what you want it to do differently, and it works out
+whether that's a hook, a skill, an instruction, an approved command or a memory, and builds it
+with you. Nothing is saved until you've read it and said yes.
 
 ### One file per project
 
