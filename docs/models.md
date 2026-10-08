@@ -60,6 +60,10 @@ short; it never makes a model think longer than it would on its own.
 
 ## Context window
 
+Braney needs a context window of at least 32k tokens. It may run with less, but that isn't tested
+or recommended. Many servers load a model with a smaller window than it supports, so check the
+setting when you load it.
+
 Braney reads the size of the context window from the server. If the server reports it wrong, set
 it yourself:
 

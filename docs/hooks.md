@@ -47,7 +47,7 @@ These handlers read the subject; they can't change what braney does.
 | --- | --- | --- |
 | `ready` | every script has loaded | none |
 | `session` | a conversation starts, on its first prompt | `resumed` |
-| `turn:before` | you sent a prompt | `prompt`, `isSubAgent` |
+| `turn:before` | you sent a prompt (steers excluded) | `prompt`, `isSubAgent` |
 | `turn:after` | a turn ended, answered or failed, but not stopped | `prompt`, `answer`, `error`, `ms`, `tokens`, `contextSize`, `isSubAgent` |
 | `reply` | the model answered, once per step, before that step's tools run | `text`, `thinking`, `isSubAgent` |
 | `tool:after` | a tool call finished running | `tool`, `args`, `result`, `error`, `isSubAgent` |
@@ -82,7 +82,7 @@ they act on your conversation.
 
 | | |
 | --- | --- |
-| `braney.send(text)` | adds a note to the conversation, which the model reads on its next step |
+| `braney.send(text)` | adds a note to the conversation; sent as the model finishes its answer, it keeps the turn going |
 | `braney.compact()` | summarizes the conversation once the current turn is over |
 | `braney.abort(reason)` | stops the current turn, as `esc` would; the reason is optional and shown to you |
 | `braney.model()` | `{ backend, id, contextSize, vision, probed }` for the active model |

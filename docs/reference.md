@@ -10,7 +10,7 @@ Type `/` in the input box and the matching commands appear as you type. `/help` 
 | --- | --- |
 | `/reset`, `/new` | starts a new conversation |
 | `/rollback <turns>` | drops the last turns |
-| `/history` | reopens or deletes conversations |
+| `/history`, `/resume` | reopens or deletes conversations |
 | `/compact` | summarizes the conversation to free the context window |
 | `/context` | shows what's filling the context window |
 | `/find <text>` | searches the transcript |
@@ -59,6 +59,7 @@ Type `/` in the input box and the matching commands appear as you type. `/help` 
 | `/theme` | colours |
 | `/serve start <folder>`, `/serve stop` | serves a folder over HTTP, to preview a site |
 | `/update` | checks for and installs updates |
+| `/about` | shows the version, the author and the license |
 | `/help` | lists commands, or asks the workshop a question |
 | `/exit`, `/quit` | quits, or leaves the workshop |
 
@@ -96,4 +97,4 @@ Hooks, skills, memories, instructions, approved commands and MCP configs open in
 
 ## Command line
 
-`braney --licenses` prints the licenses of the open-source software braney is built with.
+`braney --licenses` prints braney's license, then those of the open-source software it is built with.

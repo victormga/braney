@@ -1,0 +1,102 @@
+BRANEY LICENSE
+
+Copyright (c) 2026 Victor Sabiar (https://github.com/victormga)
+
+This license covers braney v1.0.0. Everything it does not expressly grant
+stays with the author.
+
+1. What you may do
+
+You may download braney and use it for any purpose, personal or commercial,
+free of charge. You and your organization may install it on any number of
+devices you control, and copies may move freely within your organization.
+
+This permission is worldwide and cannot be transferred: you may not grant it to
+anyone else.
+
+2. Where braney comes from
+
+Braney's official source is https://github.com/victormga/braney. Every copy you
+use must come from there, directly or through your organization: from its
+releases, its install scripts, or braney's own updater.
+
+3. What you may not do
+
+- Give, sell, rent, publish or otherwise distribute braney to anyone outside
+  your organization. Point them to the official source instead.
+- Modify, decompile, disassemble or reverse engineer braney, except where the
+  law expressly allows it despite this restriction.
+- Remove or change its copyright or license notices, or present braney as your
+  own work or as coming from anywhere other than its official source.
+
+4. Extending braney is using it
+
+Braney is made to be extended. Hooks, skills, commands, instructions, memories,
+MCP servers, settings, JavaScript run in its sandbox, and the other ways braney
+is built to be configured or extended are braney used as intended, not
+modifications of it.
+
+What you make with them is yours. So is your own work: your code, your files,
+your conversations, and what models produce through braney. The author claims
+no rights over any of it.
+
+5. Other people's software and services
+
+Braney is built with open-source software that belongs to its authors and is
+licensed under their own terms. "braney --licenses" lists those components and
+their licenses. This license grants no rights to them and takes none away.
+
+Braney also works with services the author does not control: the model server
+you choose, MCP servers, DuckDuckGo, Hugging Face, GitHub, and the websites the
+agent visits. Their own terms apply to them. The author is not responsible for
+them, nor for what any model says or does.
+
+6. No warranty
+
+Braney is provided "as is", without warranty of any kind, express or implied,
+including merchantability, fitness for a particular purpose and
+non-infringement. It may have bugs.
+
+This license gives you permissions; it puts the author under no obligation.
+There is no promise of support, fixes, updates or future versions. Braney
+improves when and how its author chooses.
+
+7. Your responsibility
+
+Braney runs commands, changes files and reaches the network at a model's
+direction, within the limits you set. You are responsible for what you let it
+do, and for checking its work.
+
+8. Limitation of liability
+
+The author is not liable for any loss or damage arising from braney or its use,
+direct or indirect, including lost data, lost profits, damaged systems, and
+anything a model or an extension did, even if told such damage was possible.
+
+9. Future versions
+
+The license that comes with a version never changes for that version, and it
+cannot be revoked except under section 10. Later versions may come under
+different terms, including an open-source license. An update you install, by
+hand or through automatic updates, comes under the license released with it.
+
+10. Termination
+
+This license ends automatically if you break its terms. You must then stop
+using braney and delete your copies.
+
+11. Feedback
+
+Feature requests, bug reports and other suggestions are welcome. The author may
+use them freely, with no obligation to act on them and nothing owed to whoever
+made them.
+
+12. As far as the law allows
+
+Sections 3, 6 and 8 apply to the fullest extent the law allows. Where the law
+gives you rights that cannot be waived, those rights stand. If any part of this
+license cannot be enforced, the rest still applies.
+
+13. Governing law
+
+This license is governed by the laws of Brazil.

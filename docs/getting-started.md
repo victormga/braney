@@ -56,6 +56,10 @@ A server with an API compatible with one of these works too: pick the one it's c
 
 **Remote servers are supported**. Point braney to it using `/configure agent.base_url <url>`
 
+**Give the model at least 32k tokens of context.** That's the minimum braney is tested with; it may
+run with less, but that isn't tested or recommended. Many servers load a model with a smaller
+window than it supports, so set it when you load the model.
+
 ## First run
 
 Open a terminal in your project folder and run:
