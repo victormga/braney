@@ -64,15 +64,15 @@ itself there.
 **By hand**
 
 Download the archive for your system from
-[Releases](https://github.com/victormga/braney/releases/latest) and put `Braney` on your `PATH`,
+[Releases](https://github.com/victormga/braney/releases/latest) and put `braney` on your `PATH`,
 in a folder you own: Braney updates itself in place. On macOS, a browser download is quarantined;
-`xattr -d com.apple.quarantine Braney` clears it.
+`xattr -d com.apple.quarantine braney` clears it.
 
 ## Quick start
 
 1. Start one of the [supported servers](#supported-backends), and load the model with a context
    window of at least 32k tokens. It may run with less, but that isn't tested or recommended.
-2. Open a terminal in your project and run `Braney`.
+2. Open a terminal in your project and run `braney`.
 3. Pick the server and the model.
 4. Ask for something.
 
