@@ -1,12 +1,18 @@
-<!-- TODO: assets/demo.gif, a short session recorded with VHS -->
+<p align="center">
+  <img src="assets/hero.gif" alt="The braney logo over falling green characters">
+</p>
 
-# braney
+# BRANEY
 
 **The agent that takes local models seriously.**
 
 Braney is a **batteries included** agent for your terminal, built to get real work out of the model running on
 your own hardware. It can read your project, edit files, run code, search the web and check its
 own work, with everything it needs already in the box.
+
+<p align="center">
+  <img src="assets/example1.gif" alt="braney answering how to compare dates in JavaScript" width="400">&emsp;&emsp;<img src="assets/example2.gif" alt="braney reading a project's files to review its code" width="400">
+</p>
 
 ## Why braney
 
@@ -325,4 +331,4 @@ Braney isn't open source, at least not yet. The code is closed for now, and that
 the future. Until then, this repository is its home: the releases, the docs, and the issues where
 it gets shaped.
 
-<!-- TODO: license terms for the binaries -->
+The binaries are free for personal and commercial use, under the terms in [LICENSE](LICENSE).
