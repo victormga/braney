@@ -31,6 +31,8 @@ Conversations are saved as they go, in the project's `.braney` file.
 | `/reset`, `/new`, `ctrl+r` | starts a new conversation |
 | `/rollback 2` | drops the last two turns, for when the agent went the wrong way |
 
+A message you send while the agent is working counts as a turn of its own for `/rollback`.
+
 ## The screen
 
 | Command | What it does |

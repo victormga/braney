@@ -16,7 +16,7 @@ token counts as `32k`.
 | --- | --- | --- |
 | `agent.base_url` | the server's usual address | where the model backend is, its root without `/v1` |
 | `agent.api_key` | none | the key the server needs, if any |
-| `agent.tool_result_limit` | 4 KB | how large a tool result can be before it's kept aside for the model to page through |
+| `agent.tool_result_limit` | 4 KB | how large a tool result can be before it's kept aside for the model to page through; a read of a file or a kept-aside result asking for more fails |
 | `model.context_size` | what the server reports | the model's context window, for a server that reports it wrong |
 | `web.timeout` | 30 seconds | how long a web search or page read may take |
 | `web.max_bytes` | 5 MB | the most a page read may download |
@@ -25,7 +25,7 @@ token counts as `32k`.
 | `sandbox.disk_limit` | 10 GB | how much a sandboxed script may write |
 | `mcp.timeout` | 60 seconds | how long an MCP server has to answer |
 | `browser.path` | an installed browser | the browser the agent uses for pages that need one |
-| `alerts.sound` | `default` | the sound Braney plays when it needs you |
+| `alerts.sound` | `default` | the sound Braney plays when it finishes a request or needs an answer from you |
 | `alerts.volume` | 0.5 | how loud, from 0 to 1 |
 
 When no browser is installed and the agent needs one, Braney offers to download one, and asks

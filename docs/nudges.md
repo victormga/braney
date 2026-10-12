@@ -2,7 +2,7 @@
 
 Small models fail in familiar ways: they repeat themselves, loop over the same tool, give up
 halfway, or say a job is done when it isn't. Braney watches for these while the model works, and
-when it spots one, it tells the model what went wrong so it can recover.
+when it spots one, it steers the model back on track.
 
 | Nudge | Steps in when the model… |
 | --- | --- |

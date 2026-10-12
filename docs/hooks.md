@@ -29,13 +29,15 @@ braney.on("turn:after", (turn) => {
 })
 ```
 
-`console.log` shows its output in your conversation. `braney.off(event, handler)` removes a
+`console.log` shows its output in your conversation, one message per call with its line breaks
+kept, and so do `console.table` and the rest of `console`. `braney.off(event, handler)` removes a
 handler, given the same function.
 
 Scripts run in the order their names sort, so name them to sort where they belong, like
 `10-guard.js` and `20-lint.js`. All of them share one `globalThis`.
 
-Every script loads fresh for each prompt, and nothing in a variable lasts from one to the next. Keep
+Every script loads fresh for each prompt, `/compact`, model pick and reopened conversation, and
+nothing in a variable lasts from one to the next. Keep
 what has to last in `localStorage`, which works as it does in a browser: strings in and out, up to
 5 MB per project. Setup that depends on another script belongs in a `braney.on("ready", cb)` handler.
 
@@ -48,14 +50,20 @@ These handlers read the subject; they can't change what Braney does.
 | `ready` | every script has loaded | none |
 | `session` | a conversation starts, on its first prompt | `resumed` |
 | `turn:before` | you sent a prompt (steers excluded) | `prompt`, `isSubAgent` |
-| `turn:after` | a turn ended, answered or failed, but not stopped | `prompt`, `answer`, `error`, `ms`, `tokens`, `contextSize`, `isSubAgent` |
+| `turn:after` | a turn ended, answered or failed, but not stopped | `prompt`, `answer`, `error`, `ms`, `rounds`, `inputTokens`, `outputTokens`, `contextUsed`, `contextSize`, `isSubAgent` |
 | `reply` | the model answered, once per step, before that step's tools run | `text`, `thinking`, `isSubAgent` |
 | `tool:after` | a tool call finished running | `tool`, `args`, `result`, `error`, `isSubAgent` |
 | `model` | a model was loaded | `backend`, `id`, `contextSize`, `vision`, `probed` |
-| `compact:before` | the conversation is about to be summarized | `automatic`, `tokens`, `isSubAgent` |
-| `compact:after` | it was summarized | `automatic`, `tokens`, `reclaimed`, `error`, `ms`, `isSubAgent` |
+| `compact:before` | the conversation is about to be summarized | `automatic`, `contextUsed`, `isSubAgent` |
+| `compact:after` | it was summarized | `automatic`, `contextUsed`, `reclaimed`, `error`, `ms`, `isSubAgent` |
 
-- `isSubAgent` is true when a subagent, a helper the agent started, is the one working.
+- `contextUsed` is how many tokens of the context window, `contextSize`, the conversation takes up.
+- `rounds` is how many times the model was called during the turn, subagents included.
+- `inputTokens` and `outputTokens` are the tokens the model read and wrote over those calls. Each
+  call reads the whole conversation, so `inputTokens` grows with every round. Both are 0 when your
+  backend doesn't report token usage.
+- `isSubAgent` is true when a subagent, a helper the agent started, is the one working. Its
+  `turn:after` reports the totals of the turn it belongs to, up to that point.
 - `resumed` is true when you reopened a saved conversation.
 - `automatic` is true when the context window filled on its own, rather than you asking.
 - `reclaimed` is how many tokens the summary freed: 0 when it failed, below 0 when it cost more
@@ -77,16 +85,20 @@ These handlers read the subject; they can't change what Braney does.
 
 ## The Braney API
 
-These act on the conversation the event is about, a subagent's included. At a script's top level,
-they act on your conversation.
+These act on the conversation the event is about, a subagent's included.
+
+`braney.send`, `braney.compact` and `braney.abort` work only inside a handler. A script's top level
+and its `ready` handler run again each time the scripts load, so an action there would repeat; it
+throws instead. To act on every prompt, call it from `turn:before`. Reading `model`, `usage` and
+`session` works anywhere, and at the top level it answers for your conversation.
 
 | | |
 | --- | --- |
-| `braney.send(text)` | adds a note to the conversation; sent as the model finishes its answer, it keeps the turn going |
+| `braney.send(text)` | adds a note to the conversation; sent as the model finishes its answer, it keeps the turn going; sent while no turn of yours is running, as from `turn:after`, it starts the next one, unless the turn was stopped. A handler that always sends keeps Braney going until you stop it |
 | `braney.compact()` | summarizes the conversation once the current turn is over |
 | `braney.abort(reason)` | stops the current turn, as `esc` would; the reason is optional and shown to you |
 | `braney.model()` | `{ backend, id, contextSize, vision, probed }` for the active model |
-| `braney.usage()` | `{ tokens, contextSize }` for the conversation, read fresh each call |
+| `braney.usage()` | `{ contextUsed, contextSize }` for the conversation, read fresh each call |
 | `braney.session()` | `{ key, title, startedAt }`, with `startedAt` in milliseconds |
 
 ## What a hook can use
@@ -96,6 +108,8 @@ Unlike the agent, a hook runs as you, with your permissions, on your machine.
 - `require` gives Node's `fs`, `path`, `os`, `crypto`, `child_process`, `http`, `https`, `url`,
   `util`, `events`, `assert`, `buffer`, `timers` and `querystring`. `fetch` and `process` are
   global.
+- A path, as in `require("./helper.js")`, loads that file, and one written with `import` and
+  `export`, TypeScript or JSX loads too.
 - Any other name is an npm package, installed the first time a hook requires it, **without
   asking**. `require("name@1.2.3")` pins a version.
 - `child_process` runs commands synchronously only: `execSync`, `execFileSync` and `spawnSync`.
@@ -164,12 +178,13 @@ braney.on("tool:after", (call) => {
 })
 ```
 
-Keep a running count of tokens across prompts:
+Keep a running count of the tokens the model has written across prompts:
 
 ```js
 braney.on("turn:after", (turn) => {
-	const total = Number(localStorage.getItem("tokens") ?? 0) + turn.tokens
+	if (turn.isSubAgent) return // already counted in the turn it belongs to
+	const total = Number(localStorage.getItem("tokens") ?? 0) + turn.outputTokens
 	localStorage.setItem("tokens", String(total))
-	console.log(`${total} tokens so far`)
+	console.log(`${total} tokens written so far`)
 })
 ```
