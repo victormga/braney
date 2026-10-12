@@ -4,6 +4,10 @@
   <img src="assets/hero.gif" alt="The Braney logo over falling green characters">
 </p>
 
+<p align="center">
+  If Braney is useful to you, please <a href="https://github.com/victormga/braney">⭐ star the repo</a>. It helps other people find it.
+</p>
+
 **The agent that takes local models seriously.**
 
 Braney is a **batteries included** agent for your terminal, built to get real work out of the model running on
