@@ -1,11 +1,9 @@
 # BRANEY
 
-<p align="center">
-  <img src="assets/hero.gif" alt="The Braney logo over falling green characters">
-</p>
+<sub>If Braney is useful to you, please <a href="https://github.com/victormga/braney">⭐ star the repo</a>. It helps other people find it.</sub>
 
 <p align="center">
-  If Braney is useful to you, please <a href="https://github.com/victormga/braney">⭐ star the repo</a>. It helps other people find it.
+  <img src="assets/hero.gif" alt="The Braney logo over falling green characters">
 </p>
 
 **The agent that takes local models seriously.**
